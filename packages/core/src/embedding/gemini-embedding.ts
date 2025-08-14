@@ -75,6 +75,7 @@ export class GeminiEmbedding extends Embedding {
     }
 
     async embedBatch(texts: string[]): Promise<EmbeddingVector[]> {
+        // Improved batch processing for reliability
         const processedTexts = this.preprocessTexts(texts);
         const model = this.config.model || 'gemini-embedding-001';
 
